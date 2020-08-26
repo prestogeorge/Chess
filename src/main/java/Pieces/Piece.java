@@ -1,5 +1,7 @@
 package Pieces;
 
+import Board.Board;
+
 public abstract class Piece {
     private boolean captured;
     private boolean white;
@@ -20,5 +22,5 @@ public abstract class Piece {
         this.captured = captured;
     }
 
-    public abstract boolean canMove();
+    public abstract boolean canMove(Board board);
 }
