@@ -1,6 +1,7 @@
 package Pieces;
 
 import Board.Board;
+import Coordinate.Coordinate;
 
 public abstract class Piece {
     private boolean captured;
@@ -22,5 +23,5 @@ public abstract class Piece {
         this.captured = captured;
     }
 
-    public abstract boolean canMove(Board board);
+    public abstract boolean canMove(Board board, Coordinate start, Coordinate end);
 }
