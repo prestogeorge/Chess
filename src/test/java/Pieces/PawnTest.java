@@ -19,29 +19,43 @@ public class PawnTest {
 
     @Test
     public void canMove_TrueWhenFrontEmptyWhite_test() {
-        Pawn pawn = new Pawn(false, true, new Coordinate(0, 0));
+        Pawn pawn = new Pawn(true, new Coordinate(0, 0));
         this.board.addPiece(pawn);
         assertTrue(pawn.canMove(this.board, new Coordinate(0, 1)));
     }
 
     @Test
     public void canMove_TrueWhenFrontEmptyBlack_test() {
-        Pawn pawn = new Pawn(false, false, new Coordinate(0, 7));
+        Pawn pawn = new Pawn(false, new Coordinate(0, 7));
         this.board.addPiece(pawn);
         assertTrue(pawn.canMove(this.board, new Coordinate(0, 6)));
     }
 
     @Test
     public void canMove_FalseWhenMoreThanOneSpaceWhite_test() {
-        Pawn pawn = new Pawn(false, true, new Coordinate(0, 0));
+        Pawn pawn = new Pawn(true, new Coordinate(0, 0));
         this.board.addPiece(pawn);
         assertFalse(pawn.canMove(this.board, new Coordinate(0, 2)));
     }
 
     @Test
     public void canMove_FalseWhenMoreThanOneSpaceBlack_test() {
-        Pawn pawn = new Pawn(false, false, new Coordinate(0, 7));
+        Pawn pawn = new Pawn(false, new Coordinate(0, 7));
         this.board.addPiece(pawn);
         assertFalse(pawn.canMove(this.board, new Coordinate(0, 5)));
+    }
+
+    @Test
+    public void canMove_FalseWhenLeft_test() {
+        Pawn pawn = new Pawn(true, new Coordinate(1, 0));
+        this.board.addPiece(pawn);
+        assertFalse(pawn.canMove(this.board, new Coordinate(0, 0)));
+    }
+
+    @Test
+    public void canMove_FalseWhenRight_test() {
+        Pawn pawn = new Pawn(true, new Coordinate(0, 0));
+        this.board.addPiece(pawn);
+        assertFalse(pawn.canMove(this.board, new Coordinate(1, 0)));
     }
 }

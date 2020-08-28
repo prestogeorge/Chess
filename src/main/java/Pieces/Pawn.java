@@ -4,9 +4,8 @@ import Board.Board;
 import Coordinate.Coordinate;
 
 public class Pawn extends Piece {
-    
-    public Pawn(boolean captured, boolean white, Coordinate startLocation) {
-        this.setCaptured(captured);
+
+    public Pawn(boolean white, Coordinate startLocation) {
         this.setWhite(white);
         this.setCurrentLocation(startLocation);
     } 
