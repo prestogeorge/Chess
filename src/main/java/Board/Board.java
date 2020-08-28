@@ -19,4 +19,8 @@ public class Board {
         this.topLeft = new Coordinate(0, 7);
         this.topRight = new Coordinate(7, 7);
     }
+
+    public void addPiece(Piece piece) {
+        this.pieces.put(piece.getCurrentLocation(), piece);
+    }
 }
